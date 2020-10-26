@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<div>
+<div><h2><i class="fa fa-user"></i> Lista de Funções</h2>
+</div>
+  <div>
+  {% if funcao_list %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><b>Descrição</b></th>
+        <th><b>Cbo</b></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for funcao in funcao_list %}
+      <tr>
+        <td>{{ funcao.descricao }}</td>
+        <td>{{ funcao.cbo }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p class="alert alert-warning">Sem itens na lista.</p>
+{% endif %}
+
+</div>
+</div>
+{% endblock %}

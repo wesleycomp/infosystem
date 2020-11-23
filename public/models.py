@@ -17,6 +17,7 @@ class Funcao(Base):
     class Meta:
         verbose_name = 'Função'
         verbose_name_plural = 'Funções'
+        ordering = ['id']
 
     def __str__(self):
         return self.descricao

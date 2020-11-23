@@ -66,10 +66,11 @@ DJANGO_APPS = [
     "django.contrib.admin",
     "django.forms",
     "public",
+    "crispy_forms",
 ]
 THIRD_PARTY_APPS = [
-    "crispy_forms",
     "allauth",
+    "extra_views",
     "allauth.account",
     "allauth.socialaccount",
 ]
@@ -110,6 +111,7 @@ PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
     "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -134,7 +136,7 @@ MIDDLEWARE = [
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 # STATIC
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-root

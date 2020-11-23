@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<div>
+<div><h2><i class="fa fa-user"></i>Função</h2>
+</div>
+<div class="card">
+    <div class="card-header">
+      <div class="row align-items-center">
+
+        <div class="col-4 text-right">
+          <a href="edit/{{funcao.id}}" class="btn btn-sm btn-info">Editar</a>
+          <a href="" class="btn btn-sm btn-warning">Deletar</a>
+          <a href="funcao" class="btn btn-sm btn-primary">Visualizar Todos</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+    <dl class="row">
+      <dt class="col-sm-3">Nome:</dt>
+      <dd class="col-sm-9">{{ funcao.descricao }}</dd>
+      <dt class="col-sm-3">CBO:</dt>
+      <dd class="col-sm-9">{{ funcao.cbo }}</dd>
+       <dt class="col-sm-3">Ativo:</dt>
+      <dd class="col-sm-9">{{ funcao.ativo }}</dd>
+    </dl>
+
+    </div>
+</div>
+
+{% endblock %}

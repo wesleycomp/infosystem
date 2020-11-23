@@ -4,17 +4,19 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views import defaults as default_views
 from django.views.generic import TemplateView
+from public.views import *
+
 
 urlpatterns = [
      path("", TemplateView.as_view(template_name="index.html"), name="home"),
+
      path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
-      # Django Admin, use {% url 'admin:index' %}
+
      path(settings.ADMIN_URL, admin.site.urls),
      # User management
      path("users/", include("infosystem.users.urls", namespace="users")),
      path("accounts/", include("allauth.urls")),
-     path("pagina/", include("public.urls")),
-     # Your stuff: custom urls includes go here
+     path('public/', include('public.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

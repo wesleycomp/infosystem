@@ -1,12 +1,14 @@
-from django import forms
-from .models import Funcao
+from django.forms import ModelForm, Textarea, TextInput
+from crispy_forms.layout import Submit, Layout
+from .models import *
 
 
-class FuncaoForm(forms.ModelForm):
-
+class FuncaoForm(ModelForm):
     class Meta:
         model = Funcao
-        fields = (
-            'descricao',
-            'cbo'
-        )
+        fields = '__all__'
+
+
+
+
+

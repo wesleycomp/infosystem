@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div>
+<div><h2><i class="fa fa-user"></i>Editar Função</h2>
+</div>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+ <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "layouts/base.html" %}
+
+
+
+
+{% block content %}
+
+{% if messages %}
+<div class="alert alert-success">
+{% for m in messages %}
+<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ m }}</li>
+{% endfor %}
+</div>
+{% endif %}
+
+<div>
+<div><h2><i class="fa fa-user"></i> Lista de Funções</h2>
+</div>
+
+       <div class="col-4 text-right">
+             <a href="{% url 'public:funcao_create' %}" class="btn btn-sm btn-success">Nova Função</a>
+        </div>
+<div class="table-responsive">
+  {% if funcoes %}
+  <table class="table">
+      <tr>
+         <thead class="thead-light">
+         <th scope="col"><b>ID</b></th>
+              <th scope="col"><b>Descrição</b></th>
+              <th scope="col"><b>Cbo</b></th>
+              <th scope="col"><b></b> </th>
+         </thead>
+      </tr>
+
+    <tbody>
+    {% for funcao in funcoes %}
+      <tr>
+        <td>
+            <a href="{% url 'public:funcao_detail' funcao.id %}">{{funcao.id}}</a>
+        </td>
+        <td>{{funcao.descricao}}</td>
+        <td>{{funcao.cbo}}</td>
+        <td>
+          <a href="{% url 'public:funcao_edit' funcao.id %}" class="btn btn-sm btn-info">Editar</a>
+         <a  href="{% url 'public:funcao_delete' funcao.id %}" class="btn btn-sm btn-warning">Deletar</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+     <div class="card-footer py-4">
+        {% if is_paginated %}
+          {% include "includes\_pagination.html" %}
+        {% endif %}
+     </div>
+{% else %}
+  <p class="alert alert-warning">Sem itens na lista.</p>
+{% endif %}
+</div>
+{% endblock %}

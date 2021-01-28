@@ -12,45 +12,45 @@
 
 <div>
  <div>
-   <h2><i class="fa fa-user"></i> Lista de Funções</h2>
+   <h2><i class="fa fa-user"></i> Lista de Pacientes</h2>
  </div>
 
  <div class="input-group-prepend">
      <div class="col-4 text-left">
-       <form action="{% url 'public:funcao_list' %}" method="GET">
+       <form action="{% url 'public:paciente_list' %}" method="GET">
           <input type="text"  placeholder="pesquisar" name="search" id="search" >
           <button class="btn btn-sm btn-search" type="submit" id="button-addon1">Buscar</button>
        </form>
      </div>
        <div class="col-2 text-left">
-          <a href="{% url 'public:funcao_create' %}" class="btn btn-sm btn-success">Nova Função</a>
+          <a href="{% url 'public:paciente_create' %}" class="btn btn-sm btn-success">Novo Paciente</a>
        </div>
  </div>
 
 <div class="table-responsive">
-  {% if funcoes %}
+  {% if pacientes %}
   <table class="table">
       <tr>
          <thead class="thead-light">
          <th scope="col"><b>ID</b></th>
-              <th scope="col"><b>Descrição</b></th>
-              <th scope="col"><b>Cbo</b></th>
+              <th scope="col"><b>Nome</b></th>
+              <th scope="col"><b>Cpf</b></th>
               <th scope="col"><b></b> </th>
          </thead>
       </tr>
 
     <tbody>
 
-    {% for funcao in funcoes %}
+    {% for paciente in pacientes %}
       <tr>
         <td>
-            <a href="{% url 'public:funcao_detail' funcao.slug %}">{{funcao.id}}</a>
+            <a href="{% url 'public:paciente_detail' paciente.slug %}">{{paciente.id}}</a>
         </td>
-        <td>{{funcao.nome_funcao}}</td>
-        <td>{{funcao.cbo}}</td>
+        <td>{{paciente.nome_paciente}}</td>
+        <td>{{paciente.cpf}}</td>
         <td>
-          <a href="{% url 'public:funcao_edit' funcao.slug %}" class="btn btn-sm btn-info">Editar</a>
-         <a  href="{% url 'public:funcao_delete' funcao.slug %}" class="btn btn-sm btn-warning">Deletar</a>
+          <a href="{% url 'public:paciente_edit' paciente.slug %}" class="btn btn-sm btn-info">Editar</a>
+         <a  href="{% url 'public:paciente_delete' paciente.slug %}" class="btn btn-sm btn-warning">Deletar</a>
         </td>
       </tr>
     {% endfor %}

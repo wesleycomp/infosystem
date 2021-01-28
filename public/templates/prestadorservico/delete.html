@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+</style>
+
+<div>
+<div><h2><i class="fa fa-user"></i>Deletar Prestador Serviço</h2>
+</div>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="alert alert-info" role="alert">
+    Deseja realmente apagar esse registro <strong>{{ prestadorservico }}</strong> ?
+  </div>
+  <a href="{% url 'public:prestadorservico_list' %}" class="btn btn-warning">Não</a>
+  <button type="submit" class="btn btn-success" value="Confirm">Sim</button>
+</form>
+</div>
+{% endblock %}

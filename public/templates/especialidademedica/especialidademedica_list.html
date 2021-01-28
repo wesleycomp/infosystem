@@ -12,45 +12,48 @@
 
 <div>
  <div>
-   <h2><i class="fa fa-user"></i> Lista de Funções</h2>
+   <h2><i class="fa fa-user"></i> Lista de Especialiades Médicas</h2>
  </div>
 
  <div class="input-group-prepend">
      <div class="col-4 text-left">
-       <form action="{% url 'public:funcao_list' %}" method="GET">
+       <form action="{% url 'public:especialidademedica_list' %}" method="GET">
           <input type="text"  placeholder="pesquisar" name="search" id="search" >
           <button class="btn btn-sm btn-search" type="submit" id="button-addon1">Buscar</button>
        </form>
      </div>
-       <div class="col-2 text-left">
-          <a href="{% url 'public:funcao_create' %}" class="btn btn-sm btn-success">Nova Função</a>
+       <div class="col-6 text-left">
+          <a href="{% url 'public:especialidademedica_create' %}" class="btn btn-sm btn-success">Nova Especialidade Medica</a>
+
+       <a href="{% url 'public:exame_list' %}" class="btn btn-sm btn-primary">Visualizar Exames</a>
+    </div>
        </div>
  </div>
 
 <div class="table-responsive">
-  {% if funcoes %}
+  {% if especialidademedicas %}
   <table class="table">
       <tr>
          <thead class="thead-light">
          <th scope="col"><b>ID</b></th>
               <th scope="col"><b>Descrição</b></th>
-              <th scope="col"><b>Cbo</b></th>
+
               <th scope="col"><b></b> </th>
          </thead>
       </tr>
 
     <tbody>
 
-    {% for funcao in funcoes %}
+    {% for especialidademedica in especialidademedicas %}
       <tr>
         <td>
-            <a href="{% url 'public:funcao_detail' funcao.slug %}">{{funcao.id}}</a>
+            <a href="{% url 'public:especialidademedica_detail' especialidademedica.slug %}">{{especialidademedica.id}}</a>
         </td>
-        <td>{{funcao.nome_funcao}}</td>
-        <td>{{funcao.cbo}}</td>
+        <td>{{especialidademedica.especialidade_medica}}</td>
+
         <td>
-          <a href="{% url 'public:funcao_edit' funcao.slug %}" class="btn btn-sm btn-info">Editar</a>
-         <a  href="{% url 'public:funcao_delete' funcao.slug %}" class="btn btn-sm btn-warning">Deletar</a>
+          <a href="{% url 'public:especialidademedica_edit' especialidademedica.slug %}" class="btn btn-sm btn-info">Editar</a>
+         <a  href="{% url 'public:especialidademedica_delete' especialidademedica.slug %}" class="btn btn-sm btn-warning">Deletar</a>
         </td>
       </tr>
     {% endfor %}

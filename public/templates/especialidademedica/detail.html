@@ -1,0 +1,26 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<div>
+<div><h2><i class="fa fa-user"></i>Especialidade Médica</h2>
+</div>
+<div class="card">
+    <div class="card-header">
+      <div class="row align-items-center">
+        <div class="col-4 text-right">
+          <a href="{% url 'public:especialidademedica_edit'especialidademedica.slug %}" class="btn btn-sm btn-info">Editar</a>
+          <a href="{% url 'public:especialidademedica_delete' especialidademedica.slug %}" class="btn btn-sm btn-warning">Deletar</a>
+          <a href="{% url 'public:especialidademedica_list' %}" class="btn btn-sm btn-primary">Visualizar Todos</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+          <dt class="col-sm-3">Nome:</dt>
+          <dd class="col-sm-9">{{ especialidademedica.especialidade_medica }}</dd>
+          <dt class="col-sm-3">Ativo:</dt>
+          <dd class="col-sm-9">{{ especialidademedica.ativo }}</dd>
+        </dl>
+    </div>
+</div>
+
+{% endblock %}

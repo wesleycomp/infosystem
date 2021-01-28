@@ -14,10 +14,10 @@
 {% endif %}
 
 <div>
-<div><h2><i class="fa fa-user"></i> Cadastro de Funções</h2>
+<div><h2><i class="fa fa-user"></i> Cadastro de Prestadores de Serviço</h2>
 </div>
     <div class="col-4 text-right">
-       <a href="{% url 'public:funcao_list' %}" class="btn btn-sm btn-primary">Visualizar Todos</a>
+       <a href="{% url 'public:prestadorservico_list' %}" class="btn btn-sm btn-primary">Visualizar Todos</a>
     </div>
 <form  method="post" enctype="multipart/form-data" >
     {% csrf_token %}

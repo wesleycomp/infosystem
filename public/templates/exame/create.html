@@ -2,22 +2,19 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
 {% if messages %}
-
 <div class="alert alert-success">
 {% for m in messages %}
 <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ m }}</li>
 {% endfor %}
 </div>
-
 {% endif %}
-
 <div>
-<div><h2><i class="fa fa-user"></i> Cadastro de Funções</h2>
+<div><h2><i class="fa fa-user"></i> Cadastro de Exames</h2>
 </div>
-    <div class="col-4 text-right">
-       <a href="{% url 'public:funcao_list' %}" class="btn btn-sm btn-primary">Visualizar Todos</a>
+    <div class="col-6 text-right">
+       <a href="{% url 'public:exame_list' %}" class="btn btn-sm btn-primary">Visualizar Todos</a>
+       <a href="{% url 'public:especialidademedica_list' %}" class="btn btn-sm btn-success">Nova Especialidade Médica</a>
     </div>
 <form  method="post" enctype="multipart/form-data" >
     {% csrf_token %}

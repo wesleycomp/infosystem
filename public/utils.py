@@ -9,3 +9,12 @@ class TipoRegra(IntEnum):
     @classmethod
     def choices(cls):
         return [(key.value, key.name) for key in cls]
+
+@unique
+class Sexo(IntEnum):
+    Masculino = 1
+    Femenino = 2
+
+    @classmethod
+    def choices(cls):
+        return [(key.value, key.name) for key in cls]

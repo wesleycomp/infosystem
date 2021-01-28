@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<div>
+<div><h2><i class="fa fa-user"></i>Prestador Serviço</h2>
+</div>
+<div class="card">
+    <div class="card-header">
+      <div class="row align-items-center">
+
+        <div class="col-4 text-right">
+          <a href="{% url 'public:prestadorservico_edit' prestadorservico.slug %}" class="btn btn-sm btn-info">Editar</a>
+          <a href="{% url 'public:prestadorservico_delete' prestadorservico.slug %}" class="btn btn-sm btn-warning">Deletar</a>
+          <a href="{% url 'public:prestadorservico_list' %}" class="btn btn-sm btn-primary">Visualizar Todos</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+    <dl class="row">
+      <dt class="col-sm-3">Nome:</dt>
+      <dd class="col-sm-9">{{ prestadorservico.nome_prestador }}</dd>
+      <dt class="col-sm-3">Cpf:</dt>
+      <dd class="col-sm-9">{{ prestadorservico.cpf }}</dd>
+       <dt class="col-sm-3">Ativo:</dt>
+      <dd class="col-sm-9">{{ prestadorservico.ativo }}</dd>
+    </dl>
+
+    </div>
+</div>
+
+{% endblock %}

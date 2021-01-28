@@ -28,27 +28,27 @@
             </a>
           </li>
           <li class="nav-item {% if 'ui-typography' in segment %} active {% endif %}">
-            <a class="nav-link" href="/ui-typography.html">
+            <a class="nav-link" href="{% url 'public:empresa_list' %}">
               <i class="material-icons">library_books</i>
               <p>Empresas</p>
             </a>
           </li>
           <li class="nav-item {% if 'ui-icons' in segment %} active {% endif %}">
-            <a class="nav-link" href="/ui-icons.html">
+            <a class="nav-link" href="{% url 'public:paciente_list' %}">
               <i class="material-icons">bubble_chart</i>
               <p>Pacientes</p>
             </a>
           </li>
           <li class="nav-item {% if 'ui-maps' in segment %} active {% endif %}">
-            <a class="nav-link" href="/ui-maps.html">
+            <a class="nav-link" href="{% url 'public:exame_list' %}">
               <i class="material-icons">location_ons</i>
               <p>Exames</p>
             </a>
           </li>
           <li class="nav-item {% if 'ui-notifications' in segment %} active {% endif %}">
-            <a class="nav-link" href="/ui-notifications.html">
+            <a class="nav-link" href="{% url 'public:prestadorservico_list' %}">
               <i class="material-icons">notifications</i>
-              <p>Convênios</p>
+              <p>Prestador Serviço</p>
             </a>
           </li>
 
